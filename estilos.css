@@ -1,0 +1,159 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;          /* texto oscuro sobre fondo claro: alto contraste */
+  background-color: #ffffff;
+}
+
+/* Header */
+header {
+  background-color: #14315e;  /* azul oscuro */
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+}
+
+/* Nav — Flexbox: una fila de enlaces (uso 1D correcto) */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #1f4a8a;
+  padding: 1rem;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Foco visible con teclado (accesibilidad) */
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}
+
+/* Main */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+h2 {
+  border-bottom: 2px solid #14315e;
+  padding-bottom: 0.3rem;
+}
+
+/* Experience — Grid: dos columnas en pantalla ancha, reflow a una en móvil */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+article {
+  background-color: #f2f5fa;
+  border: 1px solid #d0d9e8;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+/* Figure */
+figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+figcaption {
+  font-style: italic;
+  color: #444444;
+  margin-top: 0.5rem;
+}
+
+/* Form — Flexbox en columna */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #14315e;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1f4a8a;
+}
+
+/* Footer */
+footer {
+  background-color: #14315e;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Responsive: en pantallas angostas, la grilla pasa a una columna */
+@media (max-width: 600px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}
