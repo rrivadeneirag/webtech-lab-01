@@ -3,19 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>[Your Name] — Personal Page</title>
+    <title>Renato Rivadeneira — Personal Page</title>
     <link rel="stylesheet" href="estilos.css">
+    <!-- Load our JavaScript. "defer" waits until the HTML exists before running. -->
+    <script defer src="app.js"></script>
   </head>
   <body>
     <header>
       <h1>Renato Rivadeneira</h1>
       <p>Civil Engineering student · Class of 2024</p>
+      <button id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
     </header>
 
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
+      <a href="#movies">Movies</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -67,20 +71,61 @@
           <figcaption>Photo of Renato Rivadeneira, Civil Engineering student at Universidad de los Andes.</figcaption>
         </figure>
       </section>
+
+      <section id="movies">
+        <h2>My Movies</h2>
+
+        <div class="movie-controls">
+          <label for="search">Search by title</label>
+          <input type="text" id="search" placeholder="Type a title...">
+
+          <label for="genre-filter">Filter by genre</label>
+          <select id="genre-filter">
+            <option value="all">All genres</option>
+            <option value="Drama">Drama</option>
+            <option value="Sports">Sports</option>
+            <option value="Action">Action</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="War">War</option>
+          </select>
+        </div>
+
+        <ul id="movie-list" class="movie-list"></ul>
+        <p id="no-results" class="no-results" hidden>No movies match your search.</p>
+
+        <h3>Add a movie</h3>
+        <form id="add-movie-form">
+          <label for="new-title">Title</label>
+          <input type="text" id="new-title">
+
+          <label for="new-year">Year</label>
+          <input type="number" id="new-year">
+
+          <label for="new-genre">Genre</label>
+          <input type="text" id="new-genre">
+
+          <button type="submit">Add movie</button>
+        </form>
+      </section>
+
       <section id="contact">
         <h2>Contact</h2>
-        <form>
+        <form id="contact-form" novalidate>
           <label for="name">Name</label>
-          <input type="text" id="name" name="name">
+          <input type="text" id="name" name="name" aria-describedby="name-error">
+          <span id="name-error" class="error-message" role="alert"></span>
 
           <label for="email">Email</label>
-          <input type="email" id="email" name="email">
+          <input type="email" id="email" name="email" aria-describedby="email-error">
+          <span id="email-error" class="error-message" role="alert"></span>
 
           <label for="message">Message</label>
-          <textarea id="message" name="message"></textarea>
+          <textarea id="message" name="message" aria-describedby="message-error"></textarea>
+          <span id="message-error" class="error-message" role="alert"></span>
 
           <button type="submit">Send</button>
         </form>
+        <p id="contact-success" class="success-message" hidden>Thanks! Your message has been sent.</p>
 
         <p>
           <a href="https://github.com/rrivadeneirag">My GitHub</a> ·

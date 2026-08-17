@@ -7,13 +7,13 @@ body {
   margin: 0;
   font-family: system-ui, Arial, sans-serif;
   line-height: 1.6;
-  color: #1a1a1a;          /* texto oscuro sobre fondo claro: alto contraste */
+  color: #1a1a1a;          /* dark text on a light background: high contrast */
   background-color: #ffffff;
 }
 
 /* Header */
 header {
-  background-color: #14315e;  /* azul oscuro */
+  background-color: #023328;  /* dark green */
   color: #ffffff;
   padding: 2rem 1.5rem;
   text-align: center;
@@ -23,13 +23,13 @@ header h1 {
   margin: 0 0 0.5rem 0;
 }
 
-/* Nav — Flexbox: una fila de enlaces (uso 1D correcto) */
+/* Nav — Flexbox: a single row of links (correct 1D use) */
 nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  background-color: #1f4a8a;
+  background-color: #0a5c47;
   padding: 1rem;
 }
 
@@ -43,7 +43,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Foco visible con teclado (accesibilidad) */
+/* Visible keyboard focus (accessibility) */
 a:focus,
 input:focus,
 textarea:focus,
@@ -64,11 +64,11 @@ section {
 }
 
 h2 {
-  border-bottom: 2px solid #14315e;
+  border-bottom: 2px solid #023328;
   padding-bottom: 0.3rem;
 }
 
-/* Experience — Grid: dos columnas en pantalla ancha, reflow a una en móvil */
+/* Experience — Grid: two columns on wide screens, reflows to one on mobile */
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -76,8 +76,8 @@ h2 {
 }
 
 article {
-  background-color: #f2f5fa;
-  border: 1px solid #d0d9e8;
+  background-color: #eef5f1;
+  border: 1px solid #cfe3d9;
   border-radius: 8px;
   padding: 1rem 1.25rem;
 }
@@ -104,7 +104,7 @@ figcaption {
   margin-top: 0.5rem;
 }
 
-/* Form — Flexbox en columna */
+/* Form — Flexbox in a column */
 form {
   display: flex;
   flex-direction: column;
@@ -131,7 +131,7 @@ textarea {
 button {
   margin-top: 0.5rem;
   padding: 0.6rem 1.2rem;
-  background-color: #14315e;
+  background-color: #023328;
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -140,20 +140,130 @@ button {
 }
 
 button:hover {
-  background-color: #1f4a8a;
+  background-color: #0a5c47;
 }
 
 /* Footer */
 footer {
-  background-color: #14315e;
+  background-color: #023328;
   color: #ffffff;
   text-align: center;
   padding: 1.5rem;
 }
 
-/* Responsive: en pantallas angostas, la grilla pasa a una columna */
+/* Responsive: on narrow screens the grid collapses to one column */
 @media (max-width: 600px) {
   .experience-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Movies — card grid */
+.movie-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.movie-card {
+  background-color: #eef5f1;
+  border: 1px solid #cfe3d9;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.movie-card h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Movie controls */
+.movie-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.movie-controls input,
+.movie-controls select {
+  padding: 0.4rem;
+  border: 1px solid #999999;
+  border-radius: 4px;
+}
+
+.no-results {
+  font-style: italic;
+  color: #444444;
+}
+
+.remove-btn {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  background-color: #8a1f1f;
+}
+
+.remove-btn:hover {
+  background-color: #a83232;
+}
+
+/* Contact form validation */
+.error-message {
+  color: #8a1f1f;
+  font-size: 0.9rem;
+  min-height: 1.2rem;
+}
+
+.success-message {
+  color: #1a6b2f;
+  font-weight: bold;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  margin-top: 1rem;
+  background-color: #ffffff;
+  color: #023328;
+}
+
+#theme-toggle:hover {
+  background-color: #e6f2ec;
+}
+
+/* Dark theme */
+body.dark {
+  background-color: #12181f;
+  color: #e8e8e8;
+}
+
+body.dark .movie-card,
+body.dark article {
+  background-color: #1c2530;
+  border-color: #2e3b49;
+}
+
+body.dark h2 {
+  border-bottom-color: #3f8f6f;
+}
+
+body.dark figcaption,
+body.dark .no-results {
+  color: #b8b8b8;
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background-color: #1c2530;
+  color: #e8e8e8;
+  border-color: #2e3b49;
 }
