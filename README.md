@@ -5,7 +5,12 @@ Civil Engineering student at Universidad de los Andes.
 Published site: https://rrivadeneirag.github.io/webtech-lab-01/
 
 This repository contains the source code (HTML, CSS and JavaScript) of my
-personal page for Web Technologies Labs 1 and 2.
+personal page for Web Technologies Labs
+
+## Lab 1 — The page
+
+A static personal page with About, Skills, Experience and Contact sections,
+styled with CSS using Flexbox and Grid, and responsive on mobile.
 
 ## Lab 2 — Interactive features
 
